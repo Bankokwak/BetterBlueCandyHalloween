@@ -1,18 +1,8 @@
-﻿using Exiled.API.Features;
-using Exiled.Events.EventArgs.Player;
-using Exiled.API.Enums;
-using Exiled.API.Features.Items;
-using Exiled.API.Features.Pickups;
-using Exiled.API.Extensions;
-using Exiled.Events.EventArgs;
-using GameCore;
+﻿using Exiled.API.Enums;
 using MEC;
 using Exiled.Events.EventArgs.Scp330;
 using InventorySystem.Items.Usables.Scp330;
 using PlayerRoles;
-using UnityEngine;
-using Player = Exiled.Events.Handlers.Player;
-using Version = System.Version;
 
 namespace BetterBlueCandyHalloween
 {
