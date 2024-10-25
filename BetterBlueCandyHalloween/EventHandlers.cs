@@ -1,8 +1,18 @@
-﻿using Exiled.API.Enums;
+﻿using Exiled.API.Features;
+using Exiled.Events.EventArgs.Player;
+using Exiled.API.Enums;
+using Exiled.API.Features.Items;
+using Exiled.API.Features.Pickups;
+using Exiled.API.Extensions;
+using Exiled.Events.EventArgs;
+using GameCore;
 using MEC;
 using Exiled.Events.EventArgs.Scp330;
 using InventorySystem.Items.Usables.Scp330;
 using PlayerRoles;
+using UnityEngine;
+using Player = Exiled.Events.Handlers.Player;
+using Version = System.Version;
 
 namespace BetterBlueCandyHalloween
 {
@@ -10,7 +20,7 @@ namespace BetterBlueCandyHalloween
     {
         public override string Author => "Bankokwak";
         public override string Name => "Better Blue Candy Halloween";
-        public override Version Version => new Version(1, 0, 1);
+        public override Version Version => new Version(1, 0, 2);
         public override Version RequiredExiledVersion { get; } = new Version(8, 13, 1);
         public override void OnEnabled()
         {
@@ -47,6 +57,7 @@ namespace BetterBlueCandyHalloween
                     var posPlayer = ev.Player.Position;
                     var healthPlayer = ev.Player.Health;
                     ev.Player.Role.Set(RolePlayer);
+                    ev.Player.ClearInventory();
                     ev.Player.Position = posPlayer;
                     ev.Player.Health = healthPlayer;
                     ev.Player.EnableEffect(EffectType.Blinded, 1, 5f);
