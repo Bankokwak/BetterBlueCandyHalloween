@@ -49,7 +49,7 @@ namespace BetterBlueCandyHalloween
                 ev.Player.Position = posPlayer;
                 ev.Player.Health = healthPlayer;
                 ev.Player.EnableEffect(EffectType.Marshmallow);
-                ev.Player.AddAhp(base.Config.ShieldBlueCandy, base.Config.ShieldBlueCandy, 0f);
+                ev.Player.AddAhp(base.Config.ShieldBlueCandy, base.Config.ShieldBlueCandy, 0f, 1f);
                 Timing.CallDelayed(base.Config.TimeBlueCandy, () =>
                 {
                     ev.Player.DisableEffect(EffectType.Marshmallow);
